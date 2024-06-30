@@ -19,7 +19,9 @@ public class SensorReadingsController {
             throws IOException {
         FileWriter fw = new FileWriter(readingDTO.getPath(), true);
         try (BufferedWriter bw = new BufferedWriter(fw)) {
-            bw.write(readingDTO.getRow());
+            var row = readingDTO.getRow();
+            System.out.println(row);
+            bw.write(row);
             bw.newLine();
         }
     }
